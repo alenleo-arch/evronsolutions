@@ -25,7 +25,7 @@ import {
 
 import logoAsset from "@/assets/evron_logo.png.asset.json";
 import alenPhoto from "@/assets/team_alen_mon_saji.png.asset.json";
-import abhinavPhoto from "@/assets/team_abhinav_r.png.asset.json";
+import abhinavPhoto from "@/assets/team_abhinav_r_clean.png.asset.json";
 import sarveshPhoto from "@/assets/team_sarvesh_ns.png.asset.json";
 
 export const Route = createFileRoute("/")({
