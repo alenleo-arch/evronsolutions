@@ -27,6 +27,9 @@ import logoAsset from "@/assets/evron_logo.png.asset.json";
 import alenPhoto from "@/assets/team_alen_mon_saji.png.asset.json";
 import abhinavPhoto from "@/assets/team_abhinav_r_clean.png.asset.json";
 import sarveshPhoto from "@/assets/team_sarvesh_ns.png.asset.json";
+import peoples32Logo from "@/assets/peoples32-dental.jpeg.asset.json";
+import macDentalsLogo from "@/assets/macdentals.png.asset.json";
+import swarnaDentalLogo from "@/assets/swarna-dental-golden-crown.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -56,13 +59,15 @@ export const Route = createFileRoute("/")({
   component: LandingPage,
 });
 
-const PHONE_DISPLAY = "+91 82705 96480";
-const PHONE_HREF = "tel:+918270596480";
-const EMAIL = "alanmonsaji2007@gmail.com";
+const PHONE_DISPLAY = "+91 81221 39683";
+const PHONE_HREF = "tel:+918122139683";
+const EMAIL = "evronsolutions2026@gmail.com";
+const WHATSAPP_HREF = "https://wa.me/918122139683";
 
 const NAV_LINKS = [
   { label: "System", href: "#system" },
   { label: "Services", href: "#services" },
+  { label: "Ads & Growth", href: "#marketing" },
   { label: "Process", href: "#process" },
   { label: "Team", href: "#team" },
   { label: "Work", href: "#work" },
@@ -100,23 +105,24 @@ const SERVICES = [
     title: "SEO",
     desc: "Technical and content SEO that lifts you up the rankings and keeps you there.",
   },
+  {
+    icon: MessageCircle,
+    title: "WhatsApp Automation",
+    desc: "Helpful WhatsApp flows for quick replies, follow-ups and customer support.",
+  },
 ];
 
-const TOOLS = [
-  "React",
-  "Next.js",
-  "Node.js",
-  "TypeScript",
-  "Python",
-  "Django",
-  "FastAPI",
-  "SQL",
-  "MySQL",
-  "Supabase",
-  "Redis",
-  "Docker",
-  "AWS",
-  "BlueJ",
+const MARKETING_TOOLS = [
+  "Meta Ads Manager", "Google Ads", "Canva", "CapCut", "ChatGPT", "Google Analytics 4",
+  "Google Search Console", "Google Business Profile", "Meta Business Suite", "HubSpot CRM",
+  "WhatsApp Business", "Google Tag Manager", "n8n", "Microsoft Clarity", "Google Looker Studio",
+  "SEMrush", "Ahrefs", "Google Keyword Planner", "Mailchimp", "Buffer", "WordPress", "Elementor",
+  "Figma", "Zapier", "Make.com",
+];
+
+const DEVELOPMENT_SKILLS = [
+  "HTML", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js", "Node.js", "Express.js",
+  "Python", "Django", "FastAPI", "PHP", "SQL", "Java",
 ];
 
 const PROCESS = [
@@ -162,66 +168,66 @@ const TEAM = [
   {
     photo: alenPhoto.url,
     name: "Alen Mon Saji",
-    role: "Founder & Lead Designer",
-    bio: "BSc second-year student with strong communication skills. Specialises in web designing, HTML, CSS, Python and cybersecurity.",
-    skills: ["Web Designing", "HTML & CSS", "Python", "Cybersecurity"],
+    role: "Client Relations & Frontend",
+    bio: "A student founder who works closely with clients and helps turn ideas into polished, dependable digital experiences.",
+    skills: ["Client Handling", "Frontend Development", "Python", "Java", "Security", "Hosting", "Ads Management", "Linux"],
+    links: [
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/alenmonsaji?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+      { label: "Instagram", href: "https://www.instagram.com/alen__wizy?vrfl=eXZudmszb25teDdm" },
+      { label: "Call 82705 96480", href: "tel:+918270596480" },
+    ],
   },
   {
     photo: abhinavPhoto.url,
     name: "Abhinav R",
-    role: "Developer & Marketing",
-    bio: "Handles editing and coding across the stack — Python, backend development, frontend development and marketing.",
-    skills: ["Editing", "Python", "Backend Development", "Frontend Development", "Marketing"],
+    role: "Creative & Growth",
+    bio: "Brings together creative editing, social content and campaign work to help businesses communicate clearly and grow online.",
+    skills: ["Python", "Adobe Editing", "Canva", "C++", "Social Media Algorithms", "Networking", "Content Growth", "Post Boosting", "Meta Ads", "Google Analytics", "AI Automation"],
+    links: [
+      { label: "Instagram", href: "https://www.instagram.com/_abhinavv_r?mdxt=ajg2aDZrNWJyZ29p" },
+    ],
+    clientNote: "Draft review: “Abhinav explained the campaign clearly and made it easy to feel confident about the next steps.”",
   },
   {
     photo: sarveshPhoto.url,
     name: "Sarvesh NS",
-    role: "Frontend Developer",
-    bio: "BSc second-year student skilled in frontend development, Java, Python, HTML, CSS, marketing and more.",
-    skills: ["Frontend Development", "Java", "Python", "HTML & CSS", "Marketing"],
+    role: "Backend & Cloud",
+    bio: "A student developer focused on reliable backend systems, cloud hosting and keeping business data organized.",
+    skills: ["Marketing", "Cloud Hosting", "Backend Development", "Java", "Database Management"],
+    links: [
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/sarvesh-ns-4aa406410?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+      { label: "Instagram", href: "https://www.instagram.com/sarvesh_3408?psln=bHVhcTQyd2k1cWU0" },
+    ],
+    clientNote: "Draft review: “Sarvesh kept the technical work organized and communicated progress in a clear, helpful way.”",
   },
 ];
 
 const PROJECTS = [
-  { name: "Aura Boutique", tags: ["Website"], result: "Fashion e-commerce store with a seamless checkout flow." },
-  { name: "Prime Fitness Studio", tags: ["Website", "Meta Ads"], result: "Landing page plus lead campaign filling trial slots." },
-  { name: "FreshBites Café", tags: ["Website"], result: "Menu-first ordering site that lifted online orders." },
-  { name: "Nexa Interiors", tags: ["Website", "Google Ads"], result: "Portfolio site and search campaign driving enquiries." },
-  { name: "GlowSkin Cosmetics", tags: ["Meta Ads"], result: "Product launch creative set that sold out the first drop." },
-  { name: "Vertex Realty", tags: ["Website", "Google Ads"], result: "Property listing site with a steady lead pipeline." },
-  { name: "CampusNotes", tags: ["Website"], result: "Student study-platform landing page built for sign-ups." },
-  { name: "UrbanRide Motors", tags: ["Google Ads"], result: "Showroom campaign bringing test-drive bookings weekly." },
-  { name: "Bloom Florals", tags: ["Social Media"], result: "Instagram growth and content calendar for a local florist." },
-  { name: "Skyline Academy", tags: ["Website", "SEO"], result: "Course enrollment funnel ranking on local searches." },
-  { name: "TravelMate Holidays", tags: ["Website", "Meta Ads"], result: "Booking site with retargeting ads recovering carts." },
-  { name: "MediCare Plus", tags: ["Website", "SEO"], result: "Clinic website with local SEO bringing appointment calls." },
+  { name: "People’s 32 Dental", url: "https://www.peoples32dental.in", logo: peoples32Logo.url, tags: ["Clinic Website", "Digital Presence"], result: "A dedicated clinic website that makes services and contact details easy to find." },
+  { name: "Mac Dentals", url: "https://www.macdentals.in", logo: macDentalsLogo.url, tags: ["Clinic Website", "Digital Presence"], result: "A clean online home for the clinic, built to help patients explore and get in touch." },
+  { name: "Swarna Dental — The Golden Crown", url: "https://www.swarnadental-thegoldencrown.in", logo: swarnaDentalLogo.url, tags: ["Clinic Website", "Digital Presence"], result: "A polished dental website that presents the clinic and its services online." },
 ];
 
 const TESTIMONIALS = [
   {
-    name: "Rahul Menon",
-    role: "Owner, Prime Fitness Studio",
-    text: "Evron built our landing page and ran the ads — trial sign-ups doubled in the first month. Communication was quick and clear throughout.",
+    name: "Dental website project",
+    role: "Draft sample — replace with approved client quote",
+    text: "The website gives our clinic a clear, professional online presence and makes it easier for patients to find the details they need.",
   },
   {
-    name: "Divya Krishnan",
-    role: "Founder, GlowSkin Cosmetics",
-    text: "The ad creatives they made felt like our brand, not a template. Our launch drop sold out and we've kept them on for every campaign since.",
+    name: "Clinic website project",
+    role: "Draft sample — replace with approved client quote",
+    text: "The design feels welcoming on mobile, and the clinic information is much easier to explore.",
   },
   {
-    name: "Suresh Kumar",
-    role: "Director, Vertex Realty",
-    text: "Professional, punctual and genuinely interested in results. The property site works beautifully on mobile and the leads keep coming.",
+    name: "Website & patient outreach",
+    role: "Draft sample — replace with approved client quote",
+    text: "Evron listened to what our practice needed and helped us present our services clearly online.",
   },
   {
-    name: "Anitha Raj",
-    role: "Owner, Bloom Florals",
-    text: "They took over our Instagram completely — posting, replies, everything. Our page finally looks like a real brand and orders come from it.",
-  },
-  {
-    name: "Vikram Shetty",
-    role: "Principal, Skyline Academy",
-    text: "From design to training our staff, everything was handled patiently. Admission enquiries through the website have grown steadily.",
+    name: "Clinic marketing project",
+    role: "Draft sample — replace with approved client quote",
+    text: "The campaign gave our clinic another way to reach local patients and made our online presence feel more consistent.",
   },
 ];
 
