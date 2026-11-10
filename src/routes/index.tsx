@@ -366,7 +366,7 @@ function Hero() {
           {[
             { value: PROJECT_COUNT, label: "Projects Delivered" },
             { value: "100%", label: "Satisfaction Rate" },
-            { value: "6", label: "Core Services" },
+            { value: "7", label: "Digital Services" },
           ].map((stat) => (
             <div key={stat.label} className="glass glass-hover rounded-3xl p-6">
               <div className="font-display text-4xl text-gradient">{stat.value}</div>
@@ -377,7 +377,7 @@ function Hero() {
 
         <div className="mx-auto mt-16 max-w-5xl" aria-label="Featured clinic websites">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-            Clinic websites we've built · select to visit
+            Clinic websites we've built
           </p>
           <div className="clinic-marquee glass rounded-2xl py-3">
             <div className="clinic-marquee__track">
