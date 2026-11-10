@@ -21,6 +21,7 @@ import {
   MousePointerClick,
   TrendingUp,
   Heart,
+  MessageCircle,
 } from "lucide-react";
 
 import logoAsset from "@/assets/evron_logo.png.asset.json";
@@ -73,6 +74,8 @@ const NAV_LINKS = [
   { label: "Work", href: "#work" },
   { label: "Contact", href: "#contact" },
 ];
+
+const PROJECT_COUNT = "6";
 
 const SERVICES = [
   {
@@ -184,7 +187,7 @@ const TEAM = [
     bio: "Brings together creative editing, social content and campaign work to help businesses communicate clearly and grow online.",
     skills: ["Python", "Adobe Editing", "Canva", "C++", "Social Media Algorithms", "Networking", "Content Growth", "Post Boosting", "Meta Ads", "Google Analytics", "AI Automation"],
     links: [
-      { label: "Instagram", href: "https://www.instagram.com/_abhinavv_r?mdxt=ajg2aDZrNWJyZ29p" },
+      { label: "Instagram", href: "https://www.instagram.com/_abhinavv_r?mdxt=ajg2aDZrNWJyZ29w" },
     ],
     clientNote: "Draft review: “Abhinav explained the campaign clearly and made it easy to feel confident about the next steps.”",
   },
@@ -211,22 +214,22 @@ const PROJECTS = [
 const TESTIMONIALS = [
   {
     name: "Dental website project",
-    role: "Draft sample — replace with approved client quote",
+    role: "Sample website feedback",
     text: "The website gives our clinic a clear, professional online presence and makes it easier for patients to find the details they need.",
   },
   {
     name: "Clinic website project",
-    role: "Draft sample — replace with approved client quote",
+    role: "Sample website feedback",
     text: "The design feels welcoming on mobile, and the clinic information is much easier to explore.",
   },
   {
     name: "Website & patient outreach",
-    role: "Draft sample — replace with approved client quote",
+    role: "Sample website feedback",
     text: "Evron listened to what our practice needed and helped us present our services clearly online.",
   },
   {
     name: "Clinic marketing project",
-    role: "Draft sample — replace with approved client quote",
+    role: "Sample ads campaign feedback",
     text: "The campaign gave our clinic another way to reach local patients and made our online presence feel more consistent.",
   },
 ];
@@ -284,14 +287,34 @@ function Nav() {
             </a>
           ))}
         </div>
-        <a
-          href={PHONE_HREF}
-          className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
-        >
-          <Phone className="h-3.5 w-3.5" />
-          <span className="hidden sm:inline">{PHONE_DISPLAY}</span>
-          <span className="sm:hidden">Call</span>
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={`mailto:${EMAIL}`}
+            aria-label={`Email ${EMAIL}`}
+            title="Email Evron Solutions"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-accent text-accent-foreground transition-transform hover:scale-105"
+          >
+            <Mail className="h-4 w-4" />
+          </a>
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Message Evron Solutions on WhatsApp"
+            title="WhatsApp"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-secondary text-secondary-foreground transition-transform hover:scale-105"
+          >
+            <MessageCircle className="h-4 w-4" />
+          </a>
+          <a
+            href={PHONE_HREF}
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-transform hover:scale-105"
+          >
+            <Phone className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">{PHONE_DISPLAY}</span>
+            <span className="sm:hidden">Call</span>
+          </a>
+        </div>
       </nav>
     </header>
   );
@@ -300,8 +323,13 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden px-4 pb-20 pt-32 md:pt-40">
-      <div className="glow-ring pointer-events-none absolute left-1/2 top-0 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-primary/20 blur-[140px]" />
-      <div className="pointer-events-none absolute right-[-120px] top-40 h-[420px] w-[420px] rounded-full bg-orchid/15 blur-[120px]" />
+      <div className="hero-orbit pointer-events-none absolute right-[-18rem] top-16 hidden md:block" aria-hidden="true">
+        <span className="hero-orbit__ring hero-orbit__ring--outer" />
+        <span className="hero-orbit__ring hero-orbit__ring--middle" />
+        <span className="hero-orbit__ring hero-orbit__ring--inner" />
+        <span className="hero-orbit__core" />
+      </div>
+      <div className="glow-ring pointer-events-none absolute left-1/2 top-0 h-[560px] w-[560px] -translate-x-1/2 rounded-full bg-primary/15 blur-[140px]" />
 
       <div className="relative mx-auto max-w-5xl text-center">
         <div className="mx-auto mb-8 w-fit rounded-3xl glass p-6">
@@ -336,7 +364,7 @@ function Hero() {
 
         <div className="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
           {[
-            { value: "10+", label: "Projects Delivered" },
+            { value: `${PROJECT_COUNT}+`, label: "Projects Delivered" },
             { value: "100%", label: "Satisfaction Rate" },
             { value: "6", label: "Core Services" },
           ].map((stat) => (
@@ -345,6 +373,31 @@ function Hero() {
               <div className="mt-1 text-sm text-muted-foreground">{stat.label}</div>
             </div>
           ))}
+        </div>
+
+        <div className="mx-auto mt-16 max-w-5xl" aria-label="Featured clinic websites">
+          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Clinic websites we've built · select to visit
+          </p>
+          <div className="clinic-marquee glass rounded-2xl py-3">
+            <div className="clinic-marquee__track">
+              {[...PROJECTS, ...PROJECTS].map((project, index) => (
+                <a
+                  key={`${project.name}-${index}`}
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  tabIndex={index >= PROJECTS.length ? -1 : undefined}
+                  aria-hidden={index >= PROJECTS.length}
+                  className="clinic-marquee__item"
+                >
+                  <img src={project.logo} alt={index >= PROJECTS.length ? "" : `${project.name} logo`} />
+                  <span>{project.name}</span>
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="mt-14">
@@ -505,11 +558,12 @@ function Tools() {
       <div className="mx-auto max-w-5xl">
         <SectionHeading
           kicker="Our Stack"
-          title="Tools We've Used"
-          subtitle="The technologies behind every website and campaign we ship."
+          title="Our Digital Toolkit"
+          subtitle="Marketing platforms and development skills used across our work."
         />
+        <h3 className="mb-4 text-center text-sm font-semibold uppercase tracking-[0.16em] text-orchid">Marketing &amp; Automation</h3>
         <div className="flex flex-wrap justify-center gap-3">
-          {TOOLS.map((tool) => (
+          {MARKETING_TOOLS.map((tool) => (
             <span
               key={tool}
               className="glass glass-hover rounded-full px-5 py-2.5 text-sm font-medium tracking-wide"
@@ -517,9 +571,14 @@ function Tools() {
               {tool}
             </span>
           ))}
-          <span className="rounded-full glass px-5 py-2.5 text-sm font-medium tracking-wide text-orchid">
-            &amp; more
-          </span>
+        </div>
+        <h3 className="mb-4 mt-10 text-center text-sm font-semibold uppercase tracking-[0.16em] text-accent">Web Development</h3>
+        <div className="flex flex-wrap justify-center gap-3">
+          {DEVELOPMENT_SKILLS.map((skill) => (
+            <span key={skill} className="rounded-full glass-strong px-5 py-2.5 text-sm font-medium tracking-wide">
+              {skill}
+            </span>
+          ))}
         </div>
       </div>
     </section>
@@ -535,17 +594,12 @@ function Process() {
           title="A Methodology With No Guesswork"
           subtitle="Six clear stages — you always know what's happening and what comes next."
         />
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-wrap justify-center gap-3">
           {PROCESS.map((phase) => (
-            <div key={phase.title} className="glass glass-hover rounded-3xl p-7">
-              <div className="flex items-center justify-between">
-                <span className="rounded-2xl bg-primary/20 p-3">
-                  <phase.icon className="h-6 w-6 text-orchid" />
-                </span>
-                <span className="font-display text-3xl text-foreground/20">{phase.step}</span>
-              </div>
-              <h3 className="mt-4 font-display text-xl">{phase.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{phase.desc}</p>
+            <div key={phase.title} title={phase.desc} className="glass glass-hover inline-flex items-center gap-2 rounded-full px-4 py-3">
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-accent text-xs font-bold text-accent-foreground">{phase.step}</span>
+              <phase.icon className="h-4 w-4 text-orchid" />
+              <span className="text-sm font-semibold">{phase.title}</span>
             </div>
           ))}
         </div>
@@ -561,7 +615,7 @@ function Team() {
         <SectionHeading
           kicker="Meet Our Team"
           title="The People Behind Evron"
-          subtitle="A young, hands-on team that treats every project like its own."
+          subtitle="We are three students building practical digital solutions for growing businesses."
         />
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {TEAM.map((member) => (
@@ -588,6 +642,19 @@ function Team() {
                     </span>
                   ))}
                 </div>
+                {member.clientNote ? (
+                  <blockquote className="mt-5 border-l-2 border-accent pl-3 text-sm italic text-muted-foreground">
+                    {member.clientNote}
+                    <span className="mt-2 block text-xs not-italic text-accent">Sample client feedback</span>
+                  </blockquote>
+                ) : null}
+                <div className="mt-5 flex flex-wrap gap-3 border-t border-border pt-4">
+                  {member.links.map((link) => (
+                    <a key={link.label} href={link.href} target={link.href.startsWith("tel:") ? undefined : "_blank"} rel={link.href.startsWith("tel:") ? undefined : "noreferrer"} className="text-xs font-semibold text-orchid underline-offset-4 hover:underline">
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
@@ -604,11 +671,14 @@ function Work() {
         <SectionHeading
           kicker="Results We've Delivered"
           title="10+ Projects, 100% Satisfaction"
-          subtitle="A snapshot of the websites and campaigns we've completed for our clients. Project links will be added here soon."
+          subtitle="Explore our live clinic websites and the digital work behind them."
         />
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {PROJECTS.map((project) => (
             <div key={project.name} className="glass glass-hover rounded-3xl p-6">
+              <a href={project.url} target="_blank" rel="noreferrer" className="mb-5 flex h-36 items-center justify-center overflow-hidden rounded-xl bg-secondary p-4" aria-label={`Open ${project.name} website`}>
+                <img src={project.logo} alt={`${project.name} logo`} className="max-h-full max-w-full object-contain" />
+              </a>
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
@@ -623,10 +693,30 @@ function Work() {
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{project.result}</p>
               <p className="mt-4 flex items-center gap-1.5 text-xs text-muted-foreground">
                 <CheckCircle2 className="h-3.5 w-3.5 text-orchid" />
-                Completed · client link coming soon
+                Live website · opens in a new tab
               </p>
+              <a href={project.url} target="_blank" rel="noreferrer" className="mt-4 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.03]">
+                Visit live website <ArrowRight className="h-4 w-4" />
+              </a>
             </div>
           ))}
+        </div>
+
+        <div id="marketing" className="mt-20">
+          <SectionHeading kicker="Campaign Snapshot" title="Growth, Made Visible" subtitle="A reported result from clinic marketing work." />
+          <div className="glass-strong mx-auto max-w-3xl rounded-3xl p-6 sm:p-8">
+            <div className="mb-5 flex items-end justify-between gap-4">
+              <div>
+                <p className="text-sm text-muted-foreground">Clinic visits in one month</p>
+                <p className="mt-1 font-display text-4xl text-gradient">20+</p>
+              </div>
+              <span className="rounded-full bg-accent px-3 py-1.5 text-xs font-semibold text-accent-foreground">Reported project result</span>
+            </div>
+            <div className="campaign-chart" role="img" aria-label="Reported result: more than 20 clinic visits in one month">
+              <span className="campaign-chart__bar" />
+            </div>
+            <div className="mt-3 flex justify-between text-xs text-muted-foreground"><span>Clinic outreach</span><span>One month</span></div>
+          </div>
         </div>
 
         {/* Testimonials */}
@@ -646,7 +736,7 @@ function Work() {
                     <Star key={s} className="h-4 w-4 fill-orchid text-orchid" />
                   ))}
                 </div>
-                <p className="mt-4 text-sm leading-relaxed text-foreground/90">"{review.text}"</p>
+            <p className="mt-4 text-sm leading-relaxed text-foreground/90">“{review.text}”</p>
                 <div className="mt-5 flex items-center gap-3">
                   <span className="rounded-full bg-primary/20 p-2">
                     <Heart className="h-4 w-4 text-orchid" />
