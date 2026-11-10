@@ -323,7 +323,7 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative overflow-hidden px-4 pb-20 pt-32 md:pt-40">
-      <div className="hero-orbit pointer-events-none absolute right-[-18rem] top-16 hidden md:block" aria-hidden="true">
+      <div className="hero-orbit pointer-events-none absolute right-[-25rem] top-20 opacity-30 md:right-[-18rem] md:top-16 md:opacity-70" aria-hidden="true">
         <span className="hero-orbit__ring hero-orbit__ring--outer" />
         <span className="hero-orbit__ring hero-orbit__ring--middle" />
         <span className="hero-orbit__ring hero-orbit__ring--inner" />
@@ -775,6 +775,14 @@ function Contact() {
 
             <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
               <CallButton label={`Call ${PHONE_DISPLAY}`} />
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-semibold text-accent-foreground transition-transform hover:scale-[1.04]"
+              >
+                <MessageCircle className="h-4 w-4" /> WhatsApp us
+              </a>
               <a
                 href={`mailto:${EMAIL}`}
                 className="inline-flex items-center gap-2 rounded-full glass px-6 py-3 font-semibold transition-transform hover:scale-[1.04]"
