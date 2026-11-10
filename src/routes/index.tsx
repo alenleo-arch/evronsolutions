@@ -75,7 +75,7 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
-const PROJECT_COUNT = "6";
+export const PROJECT_COUNT = 6;
 
 const SERVICES = [
   {
@@ -364,7 +364,7 @@ function Hero() {
 
         <div className="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
           {[
-            { value: PROJECT_COUNT, label: "Projects Delivered" },
+            { value: `${PROJECT_COUNT}`, label: "Projects Delivered" },
             { value: "100%", label: "Satisfaction Rate" },
             { value: "7", label: "Digital Services" },
           ].map((stat) => (
