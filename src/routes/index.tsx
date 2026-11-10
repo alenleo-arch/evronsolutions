@@ -364,7 +364,7 @@ function Hero() {
 
         <div className="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-4 sm:grid-cols-3">
           {[
-            { value: `${PROJECT_COUNT}+`, label: "Projects Delivered" },
+            { value: PROJECT_COUNT, label: "Projects Delivered" },
             { value: "100%", label: "Satisfaction Rate" },
             { value: "6", label: "Core Services" },
           ].map((stat) => (
@@ -670,7 +670,7 @@ function Work() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           kicker="Results We've Delivered"
-          title="10+ Projects, 100% Satisfaction"
+          title="6 Projects Delivered"
           subtitle="Explore our live clinic websites and the digital work behind them."
         />
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
