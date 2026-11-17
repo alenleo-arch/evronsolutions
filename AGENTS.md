@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep site-displayed images in `public/images` with broadly supported formats so static hosts such as Netlify serve them without Lovable asset routing.

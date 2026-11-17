@@ -24,13 +24,13 @@ import {
   MessageCircle,
 } from "lucide-react";
 
-import logoAsset from "@/assets/evron_logo.png.asset.json";
-import alenPhoto from "@/assets/team_alen_mon_saji.png.asset.json";
-import abhinavPhoto from "@/assets/team_abhinav_r_clean.png.asset.json";
-import sarveshPhoto from "@/assets/team_sarvesh_ns.png.asset.json";
-import peoples32Logo from "@/assets/peoples32-dental.jpeg.asset.json";
-import macDentalsLogo from "@/assets/macdentals.png.asset.json";
-import swarnaDentalLogo from "@/assets/swarna-dental-golden-crown.webp.asset.json";
+const LOGO_IMAGE = "/images/evron-logo.png";
+const ALEN_IMAGE = "/images/team-alen.png";
+const ABHINAV_IMAGE = "/images/team-abhinav.png";
+const SARVESH_IMAGE = "/images/team-sarvesh.png";
+const PEOPLES32_IMAGE = "/images/peoples32-dental.jpg";
+const MAC_DENTALS_IMAGE = "/images/mac-dentals.png";
+const SWARNA_DENTAL_IMAGE = "/images/swarna-dental.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -169,7 +169,7 @@ const PROCESS = [
 
 const TEAM = [
   {
-    photo: alenPhoto.url,
+    photo: ALEN_IMAGE,
     name: "Alen Mon Saji",
     role: "Client Relations & Frontend",
     bio: "A student founder who works closely with clients and helps turn ideas into polished, dependable digital experiences.",
@@ -181,7 +181,7 @@ const TEAM = [
     ],
   },
   {
-    photo: abhinavPhoto.url,
+    photo: ABHINAV_IMAGE,
     name: "Abhinav R",
     role: "Creative & Growth",
     bio: "Brings together creative editing, social content and campaign work to help businesses communicate clearly and grow online.",
@@ -192,7 +192,7 @@ const TEAM = [
     clientNote: "Draft review: “Abhinav explained the campaign clearly and made it easy to feel confident about the next steps.”",
   },
   {
-    photo: sarveshPhoto.url,
+    photo: SARVESH_IMAGE,
     name: "Sarvesh NS",
     role: "Backend & Cloud",
     bio: "A student developer focused on reliable backend systems, cloud hosting and keeping business data organized.",
@@ -206,9 +206,9 @@ const TEAM = [
 ];
 
 const PROJECTS = [
-  { name: "People’s 32 Dental", url: "https://www.peoples32dental.in", logo: peoples32Logo.url, tags: ["Clinic Website", "Digital Presence"], result: "A dedicated clinic website that makes services and contact details easy to find." },
-  { name: "Mac Dentals", url: "https://www.macdentals.in", logo: macDentalsLogo.url, tags: ["Clinic Website", "Digital Presence"], result: "A clean online home for the clinic, built to help patients explore and get in touch." },
-  { name: "Swarna Dental — The Golden Crown", url: "https://www.swarnadental-thegoldencrown.in", logo: swarnaDentalLogo.url, tags: ["Clinic Website", "Digital Presence"], result: "A polished dental website that presents the clinic and its services online." },
+  { name: "People’s 32 Dental", url: "https://www.peoples32dental.in", logo: PEOPLES32_IMAGE, tags: ["Clinic Website", "Digital Presence"], result: "A dedicated clinic website that makes services and contact details easy to find." },
+  { name: "Mac Dentals", url: "https://www.macdentals.in", logo: MAC_DENTALS_IMAGE, tags: ["Clinic Website", "Digital Presence"], result: "A clean online home for the clinic, built to help patients explore and get in touch." },
+  { name: "Swarna Dental — The Golden Crown", url: "https://www.swarnadental-thegoldencrown.in", logo: SWARNA_DENTAL_IMAGE, tags: ["Clinic Website", "Digital Presence"], result: "A polished dental website that presents the clinic and its services online." },
 ];
 
 const TESTIMONIALS = [
@@ -272,7 +272,7 @@ function Nav() {
       <nav className="glass-strong mx-auto flex max-w-6xl items-center justify-between rounded-full px-4 py-2.5">
         <a href="#top" className="flex items-center gap-2.5">
           <img
-            src={logoAsset.url}
+            src={LOGO_IMAGE}
             alt="Evron Solutions logo"
             className="h-10 w-10 rounded-full bg-surface-logo object-cover p-0.5"
           />
@@ -334,7 +334,7 @@ function Hero() {
       <div className="relative mx-auto max-w-5xl text-center">
         <div className="mx-auto mb-8 w-fit rounded-3xl glass p-6">
           <img
-            src={logoAsset.url}
+            src={LOGO_IMAGE}
             alt="Evron Solutions logo"
             className="mx-auto h-36 w-36 rounded-2xl bg-surface-logo object-contain p-2"
           />
@@ -763,7 +763,7 @@ function Contact() {
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-primary/15 via-transparent to-orchid/15" />
           <div className="relative">
             <img
-              src={logoAsset.url}
+              src={LOGO_IMAGE}
               alt="Evron Solutions logo"
               className="mx-auto h-20 w-20 rounded-2xl bg-surface-logo object-contain p-1.5"
             />
@@ -808,7 +808,7 @@ function Footer() {
       <div className="glass mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 rounded-3xl px-8 py-6 sm:flex-row">
         <div className="flex items-center gap-2.5">
           <img
-            src={logoAsset.url}
+            src={LOGO_IMAGE}
             alt="Evron Solutions logo"
             className="h-9 w-9 rounded-full bg-surface-logo object-cover p-0.5"
           />
