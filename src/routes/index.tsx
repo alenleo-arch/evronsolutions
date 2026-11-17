@@ -645,7 +645,7 @@ function Team() {
                 {member.clientNote ? (
                   <blockquote className="mt-5 border-l-2 border-accent pl-3 text-sm italic text-muted-foreground">
                     {member.clientNote}
-                    <span className="mt-2 block text-xs not-italic text-accent">Sample client feedback</span>
+                    <span className="mt-2 block text-xs not-italic text-accent">Client feedback</span>
                   </blockquote>
                 ) : null}
                 <div className="mt-5 flex flex-wrap gap-3 border-t border-border pt-4">
